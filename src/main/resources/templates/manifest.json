@@ -1,0 +1,54 @@
+{
+    "name": "GreenGuard Pro",
+    "short_name": "GreenGuard Pro",
+    "theme_color": "#9cf321",
+    "background_color": "#9cf321",
+    "display": "fullscreen",
+    "orientation": "portrait",
+    "scope": "/",
+    "start_url": "/index.html?hs=true",
+    "icons": [
+
+          {
+            "src": "icons/icon-77x77.PNG",
+            "sizes": "77x77",
+            "type": "img/icon_77x77.PNG"
+          },
+
+          {
+            "src": "icons/icon-96x96.PNG",
+            "sizes": "96x96",
+            "type": "img/icon_96x96.PNG"
+          },
+
+          {
+            "src": "icons/icon-144x144.PNG",
+            "sizes": "144x144",
+            "type": "img/icon_144x144.PNG"
+          },
+
+          {
+            "src": "icons/icon-192x192.PNG",
+            "sizes": "192x192",
+            "type": "img/icon_192x192.PNG"
+          },
+
+          {
+            "src": "icons/icon-256x256.PNG",
+            "sizes": "256x256",
+            "type": "img/icon_256x256.PNG"
+          },
+
+          {
+            "src": "icons/icon-384x384.PNG",
+            "sizes": "384x384",
+            "type": "img/icon_384x384.PNG"
+          },
+
+          {
+            "src": "icons/icon-512x512.PNG",
+            "sizes": "512x512",
+            "type": "img/icon_512x512.PNG"
+          }
+    ]
+  }

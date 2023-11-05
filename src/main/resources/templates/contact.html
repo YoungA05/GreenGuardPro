@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt - GreenGuard Pro</title>
+    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+    .hamburger {
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.bar {
+    width: 30px;
+    height: 6px;
+    background-color: #fbfbfb;
+    border-radius: 5px;
+}
+
+/* Verstecktes Menü Styles */
+/* Menü standardmäßig ausblenden */
+.hidden {
+    display: none;
+}
+
+/* Menüpunkte Styles */
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+/* Bei kleinen Bildschirmen das Menü anzeigen */
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+    .hidden {
+        display: block;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #50e855;
+        padding: 10px;
+    }
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff; /* Weißer Hintergrund */
+    color: #4CAF50; /* Grüne Textfarbe */
+}
+
+header {
+    background-color: #4CAF50; /* Grüner Hintergrund für Header */
+    color: #fff;
+    padding: 1rem 0;
+}
+
+/* Stil für das Pflanzenbild */
+.plant-image {
+    display: block;
+    margin: 0 auto; /* Zentriert das Bild horizontal */
+    max-width: 100%;
+    height: auto;
+    
+} 
+    
+    </style>
+    
+    <script>
+ // JavaScript-Code
+    document.addEventListener("DOMContentLoaded", function() {
+        const menuBtn = document.getElementById("menuBtn");
+        const navMenu = document.getElementById("navMenu");
+
+        menuBtn.addEventListener("click", function() {
+            navMenu.classList.toggle("hidden");
+        });
+    });
+    
+    </script>
+</head>
+<body>
+    <header>
+        <div class="menu">
+            <div class="hamburger" id="menuBtn">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </header>
+    <nav class="hidden" id="navMenu">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/orchid-info">Über Orchideen</a></li>
+            <li><a href="/tips">Pflegehinweise</a></li>
+            <li><a href="/contact">Kontakt</a></li>
+            <li><a href="/watering-info">Wasserbedarf</a></li>
+            <li><a href="/heat-info">Wärme</a></li>
+            <li><a href="/humidity-info">Feuchtigkeit</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h1>Kontakt</h1>
+        <p>Hier finden Sie die Kontaktdaten unseres Teams:</p>
+        <ul>
+            <li>
+                <strong>Max Mustermann</strong><br>
+                E-Mail: max@example.com<br>
+                Telefon: +123456789
+            </li>
+            <li>
+                <strong>Maria Musterfrau</strong><br>
+                E-Mail: maria@example.com<br>
+                Telefon: +987654321
+            </li>
+            <!-- Fügen Sie weitere Teammitglieder und Kontaktdaten hinzu, wie benötigt -->
+        </ul>
+    </main>
+    
+</body>
+</html>

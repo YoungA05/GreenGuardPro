@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" xlmns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenGuard Pro</title>
+    <!-- link rel="stylesheet" href="styles.css" -->
+    <!-- link rel="manifest" href="manifest.json" -->
+
+    <style>
+        /* styles.css */
+/* styles.css */
+
+/* Hamburger-Icon Styles */
+.hamburger {
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.bar {
+    width: 30px;
+    height: 6px;
+    background-color: #fbfbfb;
+    border-radius: 5px;
+}
+
+/* Verstecktes Menü Styles */
+/* Menü standardmäßig ausblenden */
+.hidden {
+    display: none;
+}
+
+/* Menüpunkte Styles */
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+/* Bei kleinen Bildschirmen das Menü anzeigen */
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+    .hidden {
+        display: block;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #50e855;
+        padding: 10px;
+    }
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff; /* Weißer Hintergrund */
+    color: #4CAF50; /* Grüne Textfarbe */
+}
+
+header {
+    background-color: #4CAF50; /* Grüner Hintergrund für Header */
+    color: #fff;
+    padding: 1rem 0;
+}
+
+/* Stil für das Pflanzenbild */
+.plant-image {
+    display: block;
+    margin: 0 auto; /* Zentriert das Bild horizontal */
+    max-width: 100%;
+    height: auto;
+    
+} 
+
+    </style>
+
+    <script>
+
+        // JavaScript-Code
+document.addEventListener("DOMContentLoaded", function() {
+    const menuBtn = document.getElementById("menuBtn");
+    const navMenu = document.getElementById("navMenu");
+
+    menuBtn.addEventListener("click", function() {
+        navMenu.classList.toggle("hidden");
+    });
+
+    /*const menuItems = document.querySelectorAll("#navMenu a");
+
+    menuItems.forEach(item => {
+        item.addEventListener("click", function(e) {
+            e.preventDefault();
+            const action = item.getAttribute("data-action");
+            // Hier können Sie je nach ausgewählter Aktion Ihre gewünschte Logik hinzufügen
+            console.log("Aktion ausgewählt:", action);
+        });
+    });*/
+
+    /*
+    //Kontakt
+    const kontaktLink = document.querySelector("#navMenu a[href='contact.html']");
+    kontaktLink.addEventListener("click", function() {
+        // Stellen Sie sicher, dass der Link zur Startseite aufgerufen wird
+        window.location.href = "contact.html";
+    });
+
+    //PflegeHinweise
+    const PflegeHinweiseLink = document.querySelector("#navMenu a[href='tips.html']");
+    PflegeHinweiseLink.addEventListener("click", function() {
+        // Stellen Sie sicher, dass der Link zur Startseite aufgerufen wird
+        window.location.href = "tips.html";
+    });
+
+    //Wärme
+    const WärmeLink = document.querySelector("#navMenu a[href='heat-info.html']");
+    WärmeLink.addEventListener("click", function() {
+        // Stellen Sie sicher, dass der Link zur Startseite aufgerufen wird
+        window.location.href = "heat-info.html";
+    });
+
+    //Home
+    const HomeLink = document.querySelector("#navMenu a[href='index.html']");
+    HomeLink.addEventListener("click", function() {
+        // Stellen Sie sicher, dass der Link zur Startseite aufgerufen wird
+        window.location.href = "index.html";
+    });
+
+    //Feuchtigkeit
+    const FeuchtigkeitLink = document.querySelector("#navMenu a[href='humidity-info.html']");
+    FeuchtigkeitLink.addEventListener("click", function() {
+        // Stellen Sie sicher, dass der Link zur Startseite aufgerufen wird
+        window.location.href = "humidity-info.html";
+    });
+
+    //Pflanzen-Models
+    const PflanzenLink = document.querySelector("#navMenu a[href='Pflanzen-info.html']");
+    PflanzenLink.addEventListener("click", function() {
+        // Stellen Sie sicher, dass der Link zur Startseite aufgerufen wird
+        window.location.href = "Plants-info.html";
+    });
+
+    //Wasserbedarf
+    const WasserbedarfLink = document.querySelector("#navMenu a[href='watering-info.html']");
+    WasserbedarfLink.addEventListener("click", function() {
+        // Stellen Sie sicher, dass der Link zur Startseite aufgerufen wird
+        window.location.href = "watering-info.html";
+    });*/
+
+});
+    </script>
+
+</head>
+
+<body>
+    <header>
+        <div class="menu">
+            <div class="hamburger" id="menuBtn">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </header>
+    <nav class="hidden" id="navMenu">
+        <ul>
+            <li><a href="/" data-action="home">Home</a></li>
+            <li><a href="/tips" data-action="tips">Pflegehinweise</a></li>
+            <li><a href="/contact" data-action="contact">Kontakt</a></li>
+            <li><a href="/Plants-info" data-action="Pflanzen-Models">Pflanzen-Models</a></li>
+            <li><a href="/heat-info" data-action="Wärme">Wärme</a></li>
+            <li><a href="/humidity-info" data-action="Feuchtigkeit">Feuchtigkeit</a></li>
+            <li><a href="/watering-info" data-action="Wasserbedarf">Wasserbedarf</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h1>Willkommen bei GreenGuard Pro</h1>
+
+        <div>
+            <img src="/img/Pflanze_Hintergrund2.PNG" alt="Pflanze" class="plant-image"> 
+            
+        </div>
+        
+        <p>Ihre intelligente Lösung für die Pflege und Überwachung von Pflanzen.</p>
+        
+    </main>
+    
+</body>
+</html>
+
+

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Über Orchideen - GreenGuard Pro</title>
+    <link rel="stylesheet" href="styles.css">
+<style>
+    .hamburger {
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.bar {
+    width: 30px;
+    height: 6px;
+    background-color: #fbfbfb;
+    border-radius: 5px;
+}
+
+/* Verstecktes Menü Styles */
+/* Menü standardmäßig ausblenden */
+.hidden {
+    display: none;
+}
+
+/* Menüpunkte Styles */
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+/* Bei kleinen Bildschirmen das Menü anzeigen */
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+    .hidden {
+        display: block;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #50e855;
+        padding: 10px;
+    }
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff; /* Weißer Hintergrund */
+    color: #4CAF50; /* Grüne Textfarbe */
+}
+
+header {
+    background-color: #4CAF50; /* Grüner Hintergrund für Header */
+    color: #fff;
+    padding: 1rem 0;
+}
+
+/* Stil für das Pflanzenbild */
+.plant-image {
+    display: block;
+    margin: 0 auto; /* Zentriert das Bild horizontal */
+    max-width: 100%;
+    height: auto;
+    
+} 
+    
+    </style>
+    
+    <script>
+ // JavaScript-Code
+    document.addEventListener("DOMContentLoaded", function() {
+        const menuBtn = document.getElementById("menuBtn");
+        const navMenu = document.getElementById("navMenu");
+
+        menuBtn.addEventListener("click", function() {
+            navMenu.classList.toggle("hidden");
+        });
+    });
+    
+    </script>
+</head>
+<body>
+    <header>
+        <div class="menu">
+            <div class="hamburger" id="menuBtn">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </header>
+    <nav class="hidden" id="navMenu">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/orchid-info">Über Orchideen</a></li>
+            <li><a href="/tips">Pflegehinweise</a></li>
+            <li><a href="/contact">Kontakt</a></li>
+            <li><a href="/watering-info">Wasserbedarf</a></li>
+            <li><a href="/heat-info">Wärme</a></li>
+            <li><a href="/humidity-info">Feuchtigkeit</a></li>
+        </ul>
+    </nav>
+    <main>
+
+        <h1>Pflanzen-Models</h1>
+        <p>Willkommen in der Welt der Orchideen, den wahren Pflanzen-Models. Hier finden Sie detaillierte Informationen über verschiedene Aspekte von Orchideen und wie Sie sie am besten pflegen können.</p>
+        
+        <section>
+        <h2>Über Orchideen</h2>
+        <p>Orchideen gehören zu den schönsten und vielfältigsten Pflanzen auf unserem Planeten. Erfahren Sie mehr über die faszinierende Welt dieser Blumen.</p>
+        <!-- Weitere Informationen über Orchideen hier -->
+
+        Orchideen sind eine der vielfältigsten Pflanzenfamilien mit einer breiten Palette von Farben und Arten.
+        Sie sind bekannt für ihre Eleganz und Schönheit.
+        Orchideen benötigen spezielle Pflege, um gesund zu bleiben.
+        </section>
+
+        <section>
+        <h2>Wasserbedarf</h2>
+        <p>Das Gießen von Orchideen erfordert Sorgfalt und Aufmerksamkeit. Lernen Sie, wie Sie den Wasserbedarf Ihrer Pflanzen befriedigen, ohne sie zu ertränken.</p>
+        <!-- Weitere Informationen zum Wasserbedarf hier -->
+    
+        Der Wasserbedarf von Orchideen hängt von der Art und dem Standort ab.
+        In der Regel sollten Sie Orchideen etwa alle 1-2 Wochen gießen.
+        Vermeiden Sie das Übergießen, da dies zu Wurzelfäule führen kann.
+        </section>
+
+        <section>
+        <h2>Feuchtigkeit</h2>
+        <p>Orchideen benötigen die richtige Luftfeuchtigkeit, um gesund zu bleiben. Entdecken Sie, wie Sie die perfekte Feuchtigkeit für Ihre Pflanzen erreichen.</p>
+        <!-- Weitere Informationen zur Feuchtigkeit hier -->
+    
+        Orchideen bevorzugen eine relative Luftfeuchtigkeit von etwa 50-70%.
+        Niedrige Luftfeuchtigkeit kann zu Problemen wie trockenen Blättern führen.
+        Sie können die Luftfeuchtigkeit um die Pflanze erhöhen, indem Sie einen Luftbefeuchter verwenden oder eine flache Schale mit Wasser in die Nähe der Pflanze stellen.
+        </section>
+
+        <section>
+        <h2>Wärme</h2>
+        <p>Die richtige Temperatur ist entscheidend für das Gedeihen von Orchideen. Erfahren Sie, wie Sie die ideale Wärme für Ihre Orchideen beibehalten.</p>
+        <!-- Weitere Informationen zur Wärme hier -->
+        Orchideen gedeihen am besten bei Temperaturen zwischen 18°C und 24°C.
+        Sie sollten vor extremen Temperaturschwankungen geschützt werden.
+        Einige Orchideenarten haben unterschiedliche Temperaturanforderungen.
+        </section>
+
+        <section>
+            <h2>Weitere Pflanzen</h2>
+            <p>Sind Sie neugierig auf andere Pflanzenarten? Entdecken Sie weitere Informationen über verschiedene Pflanzen und ihre Pflege.</p>
+            <a href="other-plants.html">Weitere Pflanzen entdecken</a>
+        </section>
+
+    </main>
+    
+</body>
+</html>
+
