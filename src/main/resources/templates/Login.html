@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="icon" type="image/png" href="img/icon_192x192.png">
+
+    <!-- Bootstrap CSS link -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles -->
+    <style>
+        body {
+            background-color: #E5F4ED; /* Background color */
+            color: #212529; /* Text color */
+            margin-top: 50px; /* Add space at the top of the page */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Default font */
+        }
+
+        .welcome-text {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #000; /* Brilliant black color for the welcome text */
+            font-size: 36px; /* Larger font size */
+            font-weight: bold; /* Bold text */
+            font-family: 'Berlin Sans FB' ; /* Change font for the welcome text */
+        }
+
+        .green-text {
+            color: #4CAF50; /* Color for the word "GreenGuardPro" */
+        }
+
+        h2 {
+            color: #4CAF50; /* Title color */
+            text-align: center; /* Center the title */
+            margin-bottom: 10px; /* Space below the title */
+        }
+
+        form {
+            max-width: 400px; /* Maximum width of the form */
+            margin: auto; /* Center the form on the page */
+            padding: 20px;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            border-radius: 10px; /* 10px border radius */
+            margin-top: 20px; /* Space above the form */
+            margin-bottom: 50px; /* Space below the form */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            color: #000; /* Label color */
+        }
+
+        button {
+            background-color: #4CAF50; /* Button background color */
+            color: #fff; /* Button text color */
+        }
+
+        button:hover {
+            background-color: #45a049; /* Change button color on hover */
+        }
+
+        p {
+            text-align: center; /* Center the paragraph */
+            margin-top: 20px; /* Space above the paragraph */
+        }
+
+        a {
+            color: #4CAF50; /* Link color */
+        }
+    </style>
+</head>
+<body>
+    <div class="welcome-text">Welcome to <span class="green-text">GreenGuardPro</span></div>
+    <h2>Login</h2>
+    <form th:action="@{/login}" method="post">
+    
+        <div th:if="${param.error}" class="alert alert-danger">
+            Invalid username and password
+        </div>
+        <div th:if="${param.logout}" class="alert alert-success">
+            You have been logged out successfully
+        </div>
+        
+        <label for="UserName">Username</label>
+        <input type="text" id="UserName" name="username" class="form-control" required>
+        <br>
+        <label for="Password">Password</label>
+        <input type="password" id="Password" name="password" class="form-control" required>
+        <br>
+        <button type="submit" class="btn btn-success btn-block">Login</button>
+    </form>
+    
+    <p>If you don't have an account, <a th:href="@{/Register}">register here</a>.</p>
+
+    <!-- Bootstrap JS and Popper.js scripts (required for some Bootstrap features) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title> Error </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Page</title>
+    <link rel="icon" type="image/png" href="img/icon_192x192.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <!-- Custom styles -->
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div th:if="${param.error}" class="alert alert-danger">
+            <h1 class="display-4">Error</h1>
+            <p class="lead">Error Status Code: <span th:text="${param.status}"></span></p>
+            <p class="lead">Error Message: <span th:text="${error.message}"></span></p>
+        </div>
+
+        <div th:unless="${param.error}" class="alert alert-danger">
+            <h1 class="display-4">Unexpected Error</h1>
+            <p class="lead">Something went wrong. Please try again later.</p>
+        </div>
+    </div>
+
+   
+</body>
+</html>

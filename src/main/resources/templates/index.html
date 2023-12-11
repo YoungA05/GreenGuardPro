@@ -6,6 +6,7 @@
     <title>GreenGuard Pro</title>
     <!-- link rel="stylesheet" href="styles.css" -->
     <!-- link rel="manifest" href="manifest.json" -->
+    <link rel="icon" type="image/png" href="img/icon_192x192.png">
 
     <style>
         /* styles.css */
@@ -176,6 +177,9 @@ document.addEventListener("DOMContentLoaded", function() {
             <li><a href="/heat-info" data-action="Wärme">Wärme</a></li>
             <li><a href="/humidity-info" data-action="Feuchtigkeit">Feuchtigkeit</a></li>
             <li><a href="/watering-info" data-action="Wasserbedarf">Wasserbedarf</a></li>
+            <li> <span sec:authentication="name">  </span></li>
+            <li><form th:action="@{/logout}" method="post"> <button type="submit">Logout</button> </form></li>
+            
         </ul>
     </nav>
     <main>
