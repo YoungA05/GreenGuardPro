@@ -43,6 +43,7 @@ public class WebSecurityConfig {
 		return authenticationProvider;
 	}
 
+	
 	@Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
          http
@@ -61,6 +62,10 @@ public class WebSecurityConfig {
             		.invalidateHttpSession(false)
             		.logoutUrl("/logout")
             		.logoutSuccessUrl("/login?logout").permitAll())
+            
+            .requiresChannel((requiresChannel) ->
+				requiresChannel
+					.anyRequest().requiresSecure())
             
             ;
             
