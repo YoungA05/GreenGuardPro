@@ -12,10 +12,14 @@ public class LoginController {
 		this.authenticationManager = authenticationManager;
 	}*/
 
-	@GetMapping("/login")
+	/*@GetMapping("/login")
     public String showLoginForm() {
         return "login";
-    }
+    }*/
+	@GetMapping("/login")
+	public void showloginform() {
+		
+	}
 	
 	/*@GetMapping("/logout")
 	public String showLogoutForm() {
