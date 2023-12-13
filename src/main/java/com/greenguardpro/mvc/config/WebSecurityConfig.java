@@ -64,9 +64,9 @@ public class WebSecurityConfig {
             		.logoutUrl("/logout")
             		.logoutSuccessUrl("/login?logout").permitAll())
             
-            .requiresChannel((requiresChannel) ->
+            /*.requiresChannel((requiresChannel) ->
 				requiresChannel
-					.anyRequest().requiresSecure())
+					.anyRequest().requiresSecure())*/
             
             ;
             
