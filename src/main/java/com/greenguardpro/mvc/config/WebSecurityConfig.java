@@ -49,7 +49,6 @@ public class WebSecurityConfig {
          http
             .authorizeHttpRequests(authorize -> authorize
                 .requestMatchers("/login","/Register").permitAll()
-                .requestMatchers("https://greenguardpro.azurewebsites.net").permitAll()
                 .anyRequest().authenticated()
             ).httpBasic(Customizer.withDefaults())
             
