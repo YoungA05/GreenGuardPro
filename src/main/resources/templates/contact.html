@@ -3,115 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kontakt - GreenGuard Pro</title>
+    <title>Contact - GreenGuard Pro</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="img/icon_192x192.png">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <style>
-    .hamburger {
-    width: 30px;
-    height: 20px;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
+        body {
+            min-height: 100vh; /* Set minimum height to 100% of the viewport height */
+            display: flex;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #E5F4ED;
+            color: #000;
+        }
 
-.bar {
-    width: 30px;
-    height: 6px;
-    background-color: #fbfbfb;
-    border-radius: 5px;
-}
+        header {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 1rem 0;
+            border-radius: 7px;
+        }
 
-/* Verstecktes Menü Styles */
-/* Menü standardmäßig ausblenden */
-.hidden {
-    display: none;
-}
+        .navbar {
+            background-color: #4CAF50;
+            padding: 0.5rem 1rem;
+            
+        }
 
-/* Menüpunkte Styles */
-nav ul li {
-    display: inline;
-    margin-right: 10px;
-}
+        .navbar-toggler-icon {
+            background-color: #fff;
+        }
 
-/* Bei kleinen Bildschirmen das Menü anzeigen */
-@media screen and (max-width: 768px) {
-    .hamburger {
-        display: block;
-    }
-    .hidden {
-        display: block;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background-color: #50e855;
+        .navbar-brand {
+            color: #fff !important;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 28px; /* Increase the font size for "GreenGuard Pro" */
+            font-weight: bold;
+        }
+
+        .navbar-nav .nav-link {
+            color: #fff !important;
+            margin-right: 10px; /* Add margin to the right for spacing */
+            margin-left: 10px; /* Add margin to the left for spacing */
+            transition: background-color 0.3s, color 0.3s;
+            border-radius: 5px; /* Add border-radius for rounded margins */
+        }
+
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link:focus {
+            background-color: #fff !important;
+            color: #4CAF50 !important;
+        }
+
+        .navbar-nav .nav-item:last-child .nav-link {
+            margin-right: 40px !important; /* Increase margin to the right for the last navbar item */
+            border-radius: 5px; /* Add border-radius for rounded margins */
+        }
+
+        .navbar-nav .nav-item:last-child {
+            margin-left: 10px !important; /* Add margin to the left for the last navbar item */
+        }
+
+        .navbar-nav .nav-item:last-child button {
+            border-radius: 20px; /* Add border-radius for rounded button */
+        }
+        
+        .navbar-nav .nav-item:nth-last-child(2),
+        .navbar-nav .nav-item:last-child {
+        margin-right: 20px;
+        margin-left: 190px; 
+        }
+
+        main {
+            flex: 1; /* Allow main content to grow and push the footer to the bottom */
+            padding: 20px;
+        }
+        
+        footer {
+        text-align: center;
         padding: 10px;
-    }
-}
-
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #fff; /* Weißer Hintergrund */
-    color: #4CAF50; /* Grüne Textfarbe */
-}
-
-header {
-    background-color: #4CAF50; /* Grüner Hintergrund für Header */
-    color: #fff;
-    padding: 1rem 0;
-}
-
-/* Stil für das Pflanzenbild */
-.plant-image {
-    display: block;
-    margin: 0 auto; /* Zentriert das Bild horizontal */
-    max-width: 100%;
-    height: auto;
-    
-} 
-    
+        background-color: #E5F4ED; /* Set background color to match the body */
+        color:  #4CAF50;
+        margin-top: 20px;
+        border-radius: 10px; /* Rounded corners for the footer */
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+       }
     </style>
-    
-    <script>
- // JavaScript-Code
-    document.addEventListener("DOMContentLoaded", function() {
-        const menuBtn = document.getElementById("menuBtn");
-        const navMenu = document.getElementById("navMenu");
-
-        menuBtn.addEventListener("click", function() {
-            navMenu.classList.toggle("hidden");
-        });
-    });
-    
-    </script>
 </head>
+
 <body>
     <header>
-        <div class="menu">
-            <div class="hamburger" id="menuBtn">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="/index"><i class="fas fa-seedling"></i> GreenGuard Pro</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"><a class="nav-link" href="/index" data-action="home"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/Plants-info" data-action="Pflanzen-Models"><i class="fas fa-leaf"></i> Plants models</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/tips" data-action="tips"><i class="fas fa-info-circle"></i> Tips</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contact" data-action="contact"><i class="fas fa-envelope"></i> Contact</a></li>   
+                    <li class="nav-item">
+                       
+                       <i class="fas fa-thermometer-half"></i> 
+                       <span th:text="${temperature}"></span>°C
+                       
+                    </li>
+
+                    <li class="nav-item">
+                    
+                     <i th:class="${waterLevel ? 'fa-regular fa-square' : 'fa-solid fa-square'}"></i> 
+                            <span th:if="${waterLevel}">Low</span>
+                            <span th:unless="${waterLevel}">High</span>
+                    
+                    </li>
+                                  
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                       <span th:if="${#authorization.expression('isAuthenticated()')}">
+                          <i class="fas fa-user"></i>
+                          <span sec:authentication="name"></span>
+                       </span>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <form th:action="@{/logout}" method="post">
+                            <button type="submit" class="btn btn-light"><i class="fas fa-sign-out-alt"></i> Logout</button>
+                        </form>
+                    </li>
+                </ul>
             </div>
-        </div>
+        </nav>
     </header>
-    <nav class="hidden" id="navMenu">
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/orchid-info">Über Orchideen</a></li>
-            <li><a href="/tips">Pflegehinweise</a></li>
-            <li><a href="/contact">Kontakt</a></li>
-            <li><a href="/watering-info">Wasserbedarf</a></li>
-            <li><a href="/heat-info">Wärme</a></li>
-            <li><a href="/humidity-info">Feuchtigkeit</a></li>
-            <li> <span sec:authentication="name">  </span></li>
-            <li><form th:action="@{/logout}" method="post"> <button type="submit">Logout</button> </form></li>
-        </ul>
-    </nav>
     <main>
         <h1>Kontakt</h1>
         <p>Hier finden Sie die Kontaktdaten unseres Teams:</p>
@@ -129,6 +157,17 @@ header {
             <!-- Fügen Sie weitere Teammitglieder und Kontaktdaten hinzu, wie benötigt -->
         </ul>
     </main>
+    
+    <footer>
+        <p>
+            Copyright &copy; GreenGuardPro 2024
+        </p>
+    </footer>
+    
+    <!-- Add Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     
 </body>
 </html>

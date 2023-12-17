@@ -1,5 +1,6 @@
 package com.greenguardpro.mvc.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -9,7 +10,11 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import com.greenguardpro.mvc.model.HeatSensor;
+import com.greenguardpro.mvc.model.HumiditySensor;
 import com.greenguardpro.mvc.model.User;
+import com.greenguardpro.mvc.model.WaterLevelSensor;
 import com.greenguardpro.mvc.repository.UserRepository;
 
 @Service
@@ -44,6 +49,11 @@ public class UserService implements UserDetailsService{
     	
     	user.setPassword(passwordEncoder.encode(user.getPassword()));
     	user.setRoles("ROLE_USER");
+    	user.setHeatSensor(new HeatSensor(0, user));
+    	user.setWaterLevelSensor(new WaterLevelSensor(user, 0));
+    	List <HumiditySensor>  list = new ArrayList<HumiditySensor>();
+    	list.add(new HumiditySensor(user, (short) 0));
+    	user.setHumiditySensors(list);
     	return this.repository.save(user);
     }
     

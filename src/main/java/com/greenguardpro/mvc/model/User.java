@@ -38,25 +38,43 @@ public class User implements UserDetails {
 	
 	private String roles;
 	
+	private int updateInterval;
+	
+	@OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+    private HeatSensor heatSensor;
+
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+    private WaterLevelSensor waterLevelSensor;
+    
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER )
+    private List<HumiditySensor> humiditySensors;
+	
 	
 	//Constructors
 	
 	public User() {
 		
 	}
-
-
-	public User(String firstName, String lastName, int age, String userName, String password, String Roles) {
+    
+	public User(String firstName, String lastName, int age, String username, String password, String roles,
+			int updateInterval, HeatSensor heatSensor, WaterLevelSensor waterLevelSensor,
+			List<HumiditySensor> humiditySensors) {
 		super();
 		FirstName = firstName;
 		LastName = lastName;
 		Age = age;
-		username = userName;
+		this.username = username;
 		Password = password;
-		roles = Roles;
+		this.roles = roles;
+		this.updateInterval = updateInterval;
+		this.heatSensor = heatSensor;
+		this.waterLevelSensor = waterLevelSensor;
+		this.humiditySensors = humiditySensors;
 	}
 
-    
+
+
+
 	// Getters and Setters 
 	
 	public String getFirstName() {
@@ -94,7 +112,7 @@ public class User implements UserDetails {
 	}*/
 
 
-	public void setUserName(String userName) {
+	public void setUsername(String userName) {
 		username = userName;
 	}
 
@@ -123,8 +141,40 @@ public class User implements UserDetails {
 	} 
 	
 	
-	// ToString
+	public int getUpdateInterval() {
+		return updateInterval;
+	}
+
+	public void setUpdateInterval(int updateInterval) {
+		this.updateInterval = updateInterval;
+	}
+
+	public HeatSensor getHeatSensor() {
+		return heatSensor;
+	}
+
+	public void setHeatSensor(HeatSensor heatSensor) {
+		this.heatSensor = heatSensor;
+	}
+
+	public WaterLevelSensor getWaterLevelSensor() {
+		return waterLevelSensor;
+	}
+
+	public void setWaterLevelSensor(WaterLevelSensor waterLevelSensor) {
+		this.waterLevelSensor = waterLevelSensor;
+	}
+
+	public List<HumiditySensor> getHumiditySensors() {
+		return humiditySensors;
+	}
+
+	public void setHumiditySensors(List<HumiditySensor> humiditySensors) {
+		this.humiditySensors = humiditySensors;
+	}
+
 	
+	//toString
 	@Override
 	public String toString() {
 		
