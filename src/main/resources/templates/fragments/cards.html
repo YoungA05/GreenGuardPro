@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenGuard Pro</title>
+    <link rel="icon" type="image/png" href="img/icon_192x192.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+</head>
+<body>
+<div class="container" th:fragment="content" th:with="user=${User}">
+        <div class="row justify-content-center">
+            <!-- Card 1 -->
+            <div class="col-md-6 mb-4" th:if= "${user.humiditySensors[0].isExisting}" >
+                <div class="card text-center">
+                    <div class="card-body">
+                        <div class="circle">S 1</div>
+                        <h5 class="card-title" th:text="${user.humiditySensors[0].plantName}"></h5>
+                        <p class="card-text" th:text="${'Humidity: '+ user.humiditySensors[0].humidityValue} + '%'"></p>
+                        <div class="progress" th:unless="${humidityOutOfRangeSensor1}">
+                            <div class="progress-bar bg-success" role="progressbar" th:style="'width: ' + ${user.humiditySensors[0].humidityValue} + '%'"></div>
+                        </div>
+                        <div class="progress" th:if="${humidityOutOfRangeSensor1}">
+                            <div class="progress-bar bg-danger" role="progressbar" th:style="'width: ' + ${user.humiditySensors[0].humidityValue} + '%'"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col-md-6 mb-4" th:if= "${user.humiditySensors[1].isExisting}" >
+                <div class="card text-center">
+                    <div class="card-body">
+                        <div class="circle">S 2</div>
+                        <h5 class="card-title" th:text="${user.humiditySensors[1].plantName}"></h5>
+                        <p class="card-text"th:text="'Humidity: ' + ${user.humiditySensors[1].humidityValue} + '%'"></p>
+                         <div class="progress" th:unless="${humidityOutOfRangeSensor2}">
+                            <div class="progress-bar bg-success" role="progressbar" th:style="'width: ' + ${user.humiditySensors[1].humidityValue} + '%'"></div>
+                        </div>
+                        <div class="progress" th:if="${humidityOutOfRangeSensor2}">
+                            <div class="progress-bar bg-danger" role="progressbar" th:style="'width: ' + ${user.humiditySensors[1].humidityValue} + '%'"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col-md-6 mb-4" th:if= "${user.humiditySensors[2].isExisting}" >
+                <div class="card text-center">
+                    <div class="card-body">
+                        <div class="circle">S 3</div>
+                        <h5 class="card-title" th:text="${user.humiditySensors[2].plantName}"></h5>
+                        <p class="card-text" th:text="'Humidity: ' + ${user.humiditySensors[2].humidityValue} + '%'"></p>
+                         <div class="progress" th:unless="${humidityOutOfRangeSensor3}">
+                            <div class="progress-bar bg-success" role="progressbar" th:style="'width: ' + ${user.humiditySensors[2].humidityValue} + '%'"></div>
+                        </div>
+                        <div class="progress" th:if="${humidityOutOfRangeSensor3}">
+                            <div class="progress-bar bg-danger" role="progressbar" th:style="'width: ' + ${user.humiditySensors[2].humidityValue} + '%'"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="col-md-6 mb-4" th:if= "${user.humiditySensors[3].isExisting}" >
+                <div class="card text-center">
+                    <div class="card-body">
+                        <div class="circle">S 4</div>
+                        <h5 class="card-title" th:text="${user.humiditySensors[3].plantName}"></h5>
+                        <p class="card-text" th:text="'Humidity: ' + ${user.humiditySensors[3].humidityValue} + '%'"></p>
+                         <div class="progress" th:unless="${humidityOutOfRangeSensor4}">
+                            <div class="progress-bar bg-success" role="progressbar" th:style="'width: ' + ${user.humiditySensors[3].humidityValue} + '%'"></div>
+                        </div>
+                        <div class="progress" th:if="${humidityOutOfRangeSensor4}">
+                            <div class="progress-bar bg-danger" role="progressbar" th:style="'width: ' + ${user.humiditySensors[3].humidityValue} + '%'"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    <br>
+    <form th:action="@{/editForm}" method="get">
+    <button type="submit" class="btn btn-light"><i class="fa-solid fa-pen-to-square"></i> Edit parameters</button>
+    </form>
+    </div>
+    
+    
+</body>
+
+</html>

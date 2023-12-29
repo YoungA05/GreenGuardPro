@@ -25,6 +25,8 @@ public class HumiditySensor {
 	private short humidityMinValue;
 	
 	private String plantName;
+	
+	private boolean isExisting;
 
 	
 	//Constructors
@@ -39,6 +41,7 @@ public class HumiditySensor {
 		this.humidityMaxValue = 0;
 		this.humidityMinValue = 0;
 		this.plantName = null;
+		this.isExisting = false;
 	}
 
 
@@ -87,6 +90,15 @@ public class HumiditySensor {
 	public void setPlantName(String plantName) {
 		this.plantName = plantName;
 	}
+	
+	public boolean isExisting() {
+		return isExisting;
+	}
+
+	public void setExisting(boolean isExisting) {
+		this.isExisting = isExisting;
+	}
+
 
 	
 	//toString
@@ -94,17 +106,11 @@ public class HumiditySensor {
 	public String toString() {
 		return "HumiditySensor [id=" + id + ", user=" + user + ", humidityValue=" + humidityValue
 				+ ", humidityMaxValue=" + humidityMaxValue + ", humidityMinValue=" + humidityMinValue + ", plantName="
-				+ plantName + "]";
+				+ plantName + ", exists=" + isExisting + "]";
 	}
 
 	
-	
-	
-	
-	
-	
-	
-	
+
 	
 
 }

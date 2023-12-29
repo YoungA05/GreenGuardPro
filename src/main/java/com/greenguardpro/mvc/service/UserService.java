@@ -49,9 +49,12 @@ public class UserService implements UserDetailsService{
     	
     	user.setPassword(passwordEncoder.encode(user.getPassword()));
     	user.setRoles("ROLE_USER");
-    	user.setHeatSensor(new HeatSensor(0, user));
+    	user.setHeatSensor(new HeatSensor(0., user));
     	user.setWaterLevelSensor(new WaterLevelSensor(user, 0));
     	List <HumiditySensor>  list = new ArrayList<HumiditySensor>();
+    	list.add(new HumiditySensor(user, (short) 0));
+    	list.add(new HumiditySensor(user, (short) 0));
+    	list.add(new HumiditySensor(user, (short) 0));
     	list.add(new HumiditySensor(user, (short) 0));
     	user.setHumiditySensors(list);
     	return this.repository.save(user);
@@ -59,7 +62,7 @@ public class UserService implements UserDetailsService{
     
     public User updateUser(Long id, User user) throws Exception {
     	User u= this.getUserById(id);
-    	u= this.saveUser(user);
+    	u= this.repository.save(user);
     	return u;
     }
     

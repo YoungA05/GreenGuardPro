@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -182,65 +182,161 @@
         </div>
         <p>Ihre intelligente Lösung für die Pflege und Überwachung von Pflanzen.</p-->
         
-        <div class="container">
-        <div class="row justify-content-center">
-            <!-- Card 1 -->
-            <div class="col-md-6 mb-4">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <div class="circle">S 1</div>
-                        <h5 class="card-title">Cactus</h5>
-                        <p class="card-text">Humidity: 75%</p>
-                        <div class="progress">
-                            <div class="progress-bar bg-success" role="progressbar" style="width: 75%;"></div>
-                        </div>
-                    </div>
-                </div>
+        
+        
+        <div th:unless="${userFormSubmitted}">
+        <!-- Form -->
+        <form th:action="@{/submitForm}" method="post">
+    <!-- Plant 1 -->
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="enableSensor1" name="enableSensor1" data-container-id="sensor1Fields">
+        <label class="form-check-label" for="enableSensor1">Enable Sensor 1</label>
+    </div>
+    <div id="sensor1Fields" class="sensor-fields">
+        <div class="form-group">
+            <label for="name1">Plant 1 Name</label>
+            <input type="text" class="form-control" id="plant1Name" name="name1" placeholder="Enter the plant's name" required disabled>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="Max1">Max Value</label>
+                <input type="number" class="form-control" id="plant1Max" name="Max1" placeholder="Maximum value for the plant's humidity" required disabled>
             </div>
-
-            <!-- Card 2 -->
-            <div class="col-md-6 mb-4">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <div class="circle">S 2</div>
-                        <h5 class="card-title">Abelia</h5>
-                        <p class="card-text">Humidity: 60%</p>
-                        <div class="progress">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 60%;"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="col-md-6 mb-4">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <div class="circle">S 3</div>
-                        <h5 class="card-title">Orchid</h5>
-                        <p class="card-text">Humidity: 90%</p>
-                        <div class="progress">
-                            <div class="progress-bar bg-warning" role="progressbar" style="width: 90%;"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 4 -->
-            <div class="col-md-6 mb-4">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <div class="circle">S 4</div>
-                        <h5 class="card-title">Daphne</h5>
-                        <p class="card-text">Humidity: 80%</p>
-                        <div class="progress">
-                            <div class="progress-bar bg-danger" role="progressbar" style="width: 80%;"></div>
-                        </div>
-                    </div>
-                </div>
+            <div class="form-group col-md-6">
+                <label for="Min1">Min Value</label>
+                <input type="number" class="form-control" id="plant1Min" name="Min1" placeholder="Minimum value for the plant's humidity" required disabled>
             </div>
         </div>
     </div>
+
+    <!-- Plant 2 -->
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="enableSensor2" name="enableSensor2" data-container-id="sensor2Fields">
+        <label class="form-check-label" for="enableSensor2">Enable Sensor 2</label>
+    </div>
+    <div id="sensor2Fields" class="sensor-fields">
+        <div class="form-group">
+            <label for="name2">Plant 2 Name</label>
+            <input type="text" class="form-control" id="plant2Name" name="name2" placeholder="Enter the plant's name" required disabled>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="Max2">Max Value</label>
+                <input type="number" class="form-control" id="plant2Max" name="Max2" placeholder="Maximum value for the plant's humidity" required disabled>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="Min2">Min Value</label>
+                <input type="number" class="form-control" id="plant2Min" name="Min2" placeholder="Minimum value for the plant's humidity" required disabled>
+            </div>
+        </div>
+    </div>
+
+    <!-- Plant 3 -->
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="enableSensor3" name="enableSensor3" data-container-id="sensor3Fields">
+        <label class="form-check-label" for="enableSensor3">Enable Sensor 3</label>
+    </div>
+    <div id="sensor3Fields" class="sensor-fields">
+        <div class="form-group">
+            <label for="name3">Plant 3 Name</label>
+            <input type="text" class="form-control" id="plant3Name" name="name3" placeholder="Enter the plant's name" required disabled>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="Max3">Max Value</label>
+                <input type="number" class="form-control" id="plant3Max" name="Max3" placeholder="Maximum value for the plant's humidity" required disabled>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="Min3">Min Value</label>
+                <input type="number" class="form-control" id="plant3Min" name="Min3" placeholder="Minimum value for the plant's humidity" required disabled>
+            </div>
+        </div>
+    </div>
+
+    <!-- Plant 4 -->
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="enableSensor4" name="enableSensor4" data-container-id="sensor4Fields">
+        <label class="form-check-label" for="enableSensor4">Enable Sensor 4</label>
+    </div>
+    <div id="sensor4Fields" class="sensor-fields">
+        <div class="form-group">
+            <label for="name4">Plant 4 Name</label>
+            <input type="text" class="form-control" id="plant4Name" name="name4" placeholder="Enter the plant's name" required disabled>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="Max4">Max Value</label>
+                <input type="number" class="form-control" id="plant4Max" name="Max4" placeholder="Maximum value for the plant's humidity" required disabled>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="Min4">Min Value</label>
+                <input type="number" class="form-control" id="plant4Min" name="Min4" placeholder="Minimum value for the plant's humidity" required disabled>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interval Time -->
+    <div class="form-group">
+        <label for="interv">Interval Time</label>
+        <input type="text" class="form-control" id="intervalTime" name="interv" placeholder="Interval of time for regular updates" required>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Validate</button>
+    
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    
+    <script th:inline="javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+        var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        
+        checkboxes.forEach(function(checkbox) {
+            checkbox.addEventListener('change', function() {
+                var containerId = this.getAttribute('data-container-id');
+                var container = document.getElementById(containerId);
+                var inputs = container.querySelectorAll('input');
+                inputs.forEach(function(input) {
+                    input.disabled = !checkbox.checked;
+                });
+            });
+        });
+    });
+</script>
+
+
+
+
+
+</form>
+
+    </div>
+
+    <div th:if="${userFormSubmitted}">
+        <!-- Display the cards based on the submitted form data -->
+        <div th:replace="fragments/cards :: content">
+            <!-- Pass plant-specific information to the card fragment -->
+            <div th:replace="fragments/card :: content" th:with="user=${User}"></div>
+        </div>
+        <script th:if="${humidityOutOfRangeSensor1}">
+          alert('Actual humidity for Sensor 1 is out of range! Please consider dealing with this issue immediately !');
+        </script>
+        <script th:if="${humidityOutOfRangeSensor2}">
+          alert('Actual humidity for Sensor 2 is out of range! Please consider dealing with this issue immediately !');
+        </script>
+        <script th:if="${humidityOutOfRangeSensor3}">
+          alert('Actual humidity for Sensor 3 is out of range! Please consider dealing with this issue immediately !');
+        </script>
+        <script th:if="${humidityOutOfRangeSensor4}">
+          alert('Actual humidity for Sensor 4 is out of range! Please consider dealing with this issue immediately !');
+        </script>
+    
+    </div> 
+       
+       
+       
+       
+       
+        
+        
     </main>
     
     <footer>
@@ -248,9 +344,10 @@
             Copyright &copy; GreenGuardPro 2024
         </p>
     </footer>
-
+    
+    
     <!-- Add Bootstrap JS and Popper.js -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>

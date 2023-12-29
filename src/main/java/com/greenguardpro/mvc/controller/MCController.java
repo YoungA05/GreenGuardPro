@@ -19,7 +19,7 @@ import com.greenguardpro.mvc.model.User;
 @Controller
 public class MCController {
 
-	@PostMapping("/api/data")
+	/*@PostMapping("/api/data")
 	public ResponseEntity<String> receiveData(@RequestParam short humidity, @RequestParam boolean waterLevel){
 		
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -50,5 +50,5 @@ public class MCController {
 		
 		return ResponseEntity.ok(values);
 			
-	}
+	}*/
 }

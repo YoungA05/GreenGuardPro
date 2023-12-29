@@ -14,7 +14,7 @@ public class HeatSensor {
 	 @GeneratedValue(strategy = GenerationType.IDENTITY)
 	 private Long id;
 	 
-	 private float temperatureValue;
+	 private Double temperatureValue;
 
 	 @OneToOne
 	 @JoinColumn(name = "user_id")
@@ -27,7 +27,7 @@ public class HeatSensor {
 		
 	}
 
-	public HeatSensor(float temperatureValue, User user) {
+	public HeatSensor(Double temperatureValue, User user) {
 		super();
 		this.temperatureValue = temperatureValue;
 		this.user = user;
@@ -35,11 +35,11 @@ public class HeatSensor {
 
 
 	//Getters and Setters
-	public float getTemperatureValue() {
+	public Double getTemperatureValue() {
 		return temperatureValue;
 	}
 
-	public void setTemperatureValue(float temperatureValue) {
+	public void setTemperatureValue(Double temperatureValue) {
 		this.temperatureValue = temperatureValue;
 	}
 
