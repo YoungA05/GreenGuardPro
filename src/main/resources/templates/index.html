@@ -151,7 +151,7 @@
 
                     <li class="nav-item">
                     
-                     <i th:class="${waterLevel ? 'fa-solid fa-droplet-slash' : 'fas fa-tint'}"></i> 
+                     <i th:class="${waterLevel ? 'fa-solid fa-droplet-slash' : 'fas fa-tint'}"></i>   
                             <span th:if="${waterLevel}">Low</span>
                             <span th:unless="${waterLevel}">High</span>
                     
@@ -301,10 +301,6 @@
         });
     });
 </script>
-
-
-
-
 
 </form>
 
